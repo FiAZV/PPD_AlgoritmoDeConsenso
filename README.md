@@ -38,7 +38,7 @@ git clone https://github.com/FiAZV/PPD_AlgoritmoDeConsenso.git
 
 ### 5. Explicação de Cada Fase do Algoritmo na Implementação
 
-### 1. Estados dos Nós
+#### 1. Estados dos Nós
 
 Cada nó pode estar em um dos três estados:
 
@@ -46,7 +46,7 @@ Cada nó pode estar em um dos três estados:
 - **Candidato (Candidate)**: O nó se torna candidato quando o timeout de eleição expira sem receber batidas de coração.
 - **Líder (Leader)**: O nó candidato se torna líder ao receber votos da maioria dos nós.
 
-### 2. Timeout de Eleição e Transição para Candidato
+#### 2. Timeout de Eleição e Transição para Candidato
 
 - **Arquivo**: `main.py`
 - **Método**: `follower()`
@@ -56,7 +56,7 @@ Cada nó pode estar em um dos três estados:
 - Cada nó seguidor define um `election_timeout` aleatório entre 3 e 5 segundos.
 - Se o nó não receber uma batida de coração dentro desse período, ele assume que o líder falhou e se torna um candidato.
 
-### 3. Processo de Eleição
+#### 3. Processo de Eleição
 
 - **Arquivo**: `main.py`
 - **Método**: `candidate()`
@@ -69,7 +69,7 @@ Cada nó pode estar em um dos três estados:
 - Se o candidato receber votos da maioria, ele se torna o líder.
 - Caso contrário, retorna ao estado de seguidor e aguarda um novo timeout.
 
-### 4. Envio de Batidas de Coração (Heartbeats)
+#### 4. Envio de Batidas de Coração (Heartbeats)
 
 - **Arquivo**: `main.py`
 - **Métodos**: `leader()`, `send_heartbeats()`
@@ -79,7 +79,7 @@ Cada nó pode estar em um dos três estados:
 - O líder envia batidas de coração para todos os seguidores para manter sua liderança.
 - As batidas de coração são enviadas em intervalos regulares para evitar que os seguidores iniciem novas eleições.
 
-### 5. Recebimento de Batidas de Coração
+#### 5. Recebimento de Batidas de Coração
 
 - **Arquivo**: `main.py`
 - **Método**: `append_entries()`
@@ -89,7 +89,7 @@ Cada nó pode estar em um dos três estados:
 - Quando um seguidor recebe uma batida de coração, ele atualiza seu `last_heartbeat` e permanece no estado de seguidor.
 - Se o termo do líder for maior que o do seguidor, o seguidor atualiza seu `current_term`.
 
-### 6. Simulação de Falhas e Recuperações
+#### 6. Simulação de Falhas e Recuperações
 
 - **Arquivo**: `test.py`
 - **Funções**:
@@ -102,7 +102,7 @@ Cada nó pode estar em um dos três estados:
 - As funções simulam diferentes cenários, incluindo operação normal, falha de nós não líderes e falha do líder.
 - Permitem observar como o algoritmo reage a essas situações e mantém o consenso.
 
-### 7. Logs Detalhados
+#### 7. Logs Detalhados
 
 A implementação inclui mensagens detalhadas que informam:
 
