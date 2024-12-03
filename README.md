@@ -38,9 +38,6 @@ git clone https://github.com/FiAZV/PPD_AlgoritmoDeConsenso.git
 
 ### 5. Explicação de Cada Fase do Algoritmo na Implementação
 
-```markdown
-## Explicação de Cada Fase do Algoritmo na Implementação
-
 ### 1. Estados dos Nós
 
 Cada nó pode estar em um dos três estados:
